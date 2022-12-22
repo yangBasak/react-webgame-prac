@@ -8,17 +8,28 @@
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 <script type="text/babel">
   'use strict';  
-  function LikeButton () {
+  function GugudanComp () {
     const [firstNum, setFirstNum] = React.useState(Math.ceil(Math.random() * 9))
     const [secondNum, setSecondNum] = React.useState(Math.ceil(Math.random() * 9))
     const [value, setValue] = React.useState('')
     const [result, setResult] = React.useState('')
+    const inpurRef = React.useRef(null)
+    
+    const onChangeInput = (e) => {
+      setValue(e.target.value)
+    }
     const onSubmit = (e) => {
       e.preventDefault();
       if(parseInt(value) === firstNum * secondNum){
         setResult("정답")
+        setFirstNum(Math.ceil(Math.random() * 9))
+        setSecondNum(Math.ceil(Math.random() * 9))
+        setValue('')
+        inpurRef.current.focus()
       }else{
         setResult("놉")
+        setValue('')
+        inpurRef.current.focus()
       }
 
     }
@@ -26,16 +37,33 @@
       <React.Fragment>
         <div>{firstNum} x {secondNum}  ?</div>
         <form onSubmit={onSubmit}>
-          <input type="number" value={value} onChange={(e)=>{setValue(e.target.value)}}/>
+          <input ref={inpurRef} type="number" value={value} onChange={onChangeInput}/>
           <button type="submit">확인</button>
         </form>
         <div>{result}</div>
-        </React.Fragment>
+      </React.Fragment>
     );
+  }
+
+  function Res () {
+    const [start, setStart] = React.useState(false)
+    if(start){
+      return (
+      <div>
+        <h1>구구단</h1>
+        <GugudanComp />
+      </div>
+    )
+    }else{
+      return (
+        <button onClick={()=>setStart(true)}>시작</button>
+      )
+    }
+    
   }
 </script>
 <script type="text/babel">
-  ReactDOM.render(<LikeButton/>, document.querySelector('#root')); // 17버젼 코드
+  ReactDOM.render(<Res />, document.querySelector('#root')); // 17버젼 코드
   // ReactDOM.createRoot(document.querySelector('#root')).render(<LikeButton />); // 18버젼 코드
 </script>
 </body>
