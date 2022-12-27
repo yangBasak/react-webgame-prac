@@ -1,5 +1,5 @@
 const React = require("react");
-const ReactDom = require("react-dom");
-
+const ReactDOM = require("react-dom/client");
 const WordChainGame = require("./WordChainGame");
-ReactDom.render(<WordChainGame />, document.querySelector("#root"));
+
+ReactDOM.createRoot(document.querySelector("#root")).render(<WordChainGame />);
