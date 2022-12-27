@@ -1,14 +1,13 @@
 {
-  "name": "word-chain-game",
+  "name": "gugudan-webpack",
   "version": "1.0.0",
-  "description": "",
+  "description": "구구단 게임을 만들어봄으로써 함수형 컴포넌트의 react Hook 방식을 배워본다.\r useState를 통해 상태를 관리하고, useRef를 통해 DOM 객체를 가져온다.",
   "main": "index.jsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "양바삭",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

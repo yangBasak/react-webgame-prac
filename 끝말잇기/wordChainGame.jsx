@@ -1,11 +1,13 @@
-const React = require('react')
-const {Component} = React
+const React = require("react");
+const { Component } = React;
 
 class WordChainGame extends Component {
-    state = {
-
-    };
-    render() {}
+  state = {
+    text: "hi",
+  };
+  render() {
+    return <div>{this.state.text}</div>;
+  }
 }
 
-module.exports = WordChainGame
+module.exports = WordChainGame;
