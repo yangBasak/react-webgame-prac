@@ -1,5 +1,5 @@
 const path = require('path')
-const webpack = require('webpack')
+const RefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 module.exports = {
     name: 'wordchaingame-setting', // 어떤 파일을 위한 웹팩 설정인가에 대한거
@@ -25,17 +25,29 @@ module.exports = {
                         },
                     }],// 바벨env연결. 배열로 감싸고 두번째에 {}안에는 해당 플러그인의 디테일한 옵션값 
                     "@babel/preset-react"
-                ] //바벨env,react 연결
+                ], //바벨env,react 연결
+                plugins: [
+                    'react-refresh/babel' // 바벨 작동 시 핫 리로딩 기능 실행
+                ]
             }
         }]
     },
     //확장 프로그램
     plugins: [
-        new webpack.LoaderOptionsPlugin({ debug: true })
+        new RefreshWebpackPlugin()//웹팩 리프레시 하기 위한거
     ],
     // 출력
     output: {
-        path: path.join(__dirname, 'dist'), //node 기능. 현재폴더, 원하는폴더이름
-        filename: 'app.js'
+        path: path.join(__dirname, 'dist'), //path는 node 기능. (현재폴더, 원하는폴더이름). path는 실제경로, publicPath는 가상경로래
+        filename: 'app.js',
+        publicPath: '/dist/',
+    },
+    // 핫 리로딩 용 서버 설정
+    devServer: {
+        devMiddleware: {
+            publicPath: '/dist/' //빌드 시 이 경로에 결과를 저장한다. 
+        },
+        static: { directory: path.resolve(__dirname) }, //index.html 위치
+        hot: true //webpack v4부터 hot은 자동으로 적용해서 굳이 안적어도 된댕
     }
 }
