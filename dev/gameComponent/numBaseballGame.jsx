@@ -1,7 +1,7 @@
 // import React, { Component } from "react";
 const React = require("react");
 const { Component } = React;
-const Try = require("./try");
+const Try = require("../component/try");
 
 function getNumbers() {
   const candidate = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -74,8 +74,7 @@ class NumBaseballGame extends Component {
     return (
       <>
         <h1>{this.state.result}</h1>
-        {/* <form onSubmit={this.onSubmitForm}> */}
-        <form>
+        <form action="#" onSubmit={this.onSubmitForm}>
           <input maxLength={4} value={this.state.value} onChange={this.onChangeInput}></input>
           <div>시도: {this.state.tries.length}</div>
           <ul>
@@ -83,7 +82,7 @@ class NumBaseballGame extends Component {
               return <Try key={`${i + 1}번 시도`} tryInfo={item} />;
             })}
           </ul>
-          <button type="button" onClick={this.onSubmitForm}>
+          <button >
             asdf
           </button>
         </form>
