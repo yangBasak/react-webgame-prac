@@ -1,3 +1,4 @@
+/* 반응속도 */
 #screen{
     width: 300px;
     height: 300px;
@@ -12,4 +13,10 @@
 }
 #screen.now {
     background-color: green;
+}
+/* 가위바위보 */
+#computer{
+    width: 142px;
+    height: 200px;
+    background-position: 0 0;
 }

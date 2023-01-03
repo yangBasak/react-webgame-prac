@@ -2,7 +2,7 @@
 const React = require("react");
 const { Component, createRef } = React;
 
-class NumBaseballGame extends Component {
+class reactionSpeedGame extends Component {
     state={
         state: 'waiting',
         message: '클릭 시작',
@@ -68,4 +68,4 @@ class NumBaseballGame extends Component {
   }
 }
 
-module.exports = NumBaseballGame;
+module.exports = reactionSpeedGame;
