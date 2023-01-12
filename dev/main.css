@@ -21,6 +21,7 @@
     background-position: 0 0;
 }
 
+/* 로또 */
 .ball{
     display: inline-block;
     border: 1px solid black;

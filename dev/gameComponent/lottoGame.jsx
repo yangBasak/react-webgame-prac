@@ -13,12 +13,53 @@ function getWinNumber() {
     return [...winNumber, bonusNumber]
 }
 
-class RSPGame extends Component {
+class LottoGame extends Component {
     state={
         winNumber: getWinNumber(),
         winBalls: [],
         bonus: null,
         redo: false
+    }
+    timeouts = [];
+    runTimeouts = () => {
+      const {winNumber} = this.state
+      for(let i = 0; i < winNumber.length - 1; i++){
+        this.timeouts = setTimeout(()=>{
+          this.setState((prevState)=>{
+            return {
+              winBalls: [...prevState.winBalls, winNumber[i]]
+            }
+          })
+        },(i+1)*100)
+      }
+      this.timeouts = setTimeout(()=>{
+        this.setState({
+          bonus: winNumber[6],
+          redo: true
+        })
+      }, 700)
+    }
+    componentDidMount() {
+      this.runTimeouts()
+    }
+    componentDidUpdate(prevProps, prevState){
+      if(this.state.winBalls.length === 0){
+        this.runTimeouts()
+      }
+    }
+    componentWillUnmount() {
+      this.timeouts.forEach((v)=>{
+        clearTimeout(v)
+      })
+    }
+    onClickRedo = () => {
+      this.setState({
+        winNumber: getWinNumber(),
+        winBalls: [],
+        bonus: null,
+        redo: false 
+      })
+      this.timeouts = []
     }
     
   render() {
@@ -31,11 +72,11 @@ class RSPGame extends Component {
         </div>
         <div>보너스</div>
         {bonus && <Ball number={bonus} />}
-        <button onClick={redo ? this.onClickRedo : ()=>{}}>한 번 더</button>
+        {redo && <button onClick={this.onClickRedo}>한 번 더</button>}
       </>
     );
   }
 }
 
-module.exports = RSPGame;
+module.exports = LottoGame;
 ``
