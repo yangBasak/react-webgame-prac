@@ -7,5 +7,6 @@ const ReactDOM = require("react-dom/client");
 // const RSPGameHooks = require("./gameComponent/RSPHooks");
 // const LottoGame = require("./gameComponent/lottoGame");
 const LottoGameHooks = require("./gameComponent/lottoGameHooks");
-ReactDOM.createRoot(document.querySelector("#root")).render(<LottoGameHooks />);
+const TictaktocGame = require("./gameComponent/tictaktocGame");
+ReactDOM.createRoot(document.querySelector("#root")).render(<TictaktocGame />);
 
