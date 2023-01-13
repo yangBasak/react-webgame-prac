@@ -17,7 +17,6 @@ exports.CLICK_CELL = "CLICK_CELL";
 exports.SET_TURN = "SET_TURN";
 
 const reducer = (state, action) => {
-  console.log(action.type);
   switch (action.type) {
     case SET_WINNER:
       return {
