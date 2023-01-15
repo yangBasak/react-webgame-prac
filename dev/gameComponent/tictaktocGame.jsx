@@ -45,7 +45,6 @@ const reducer = (state, action) => {
       };
     }
     case RESET_GAME: {
-      console.log(3)
       return {
         ...state,
         winner: '없음',

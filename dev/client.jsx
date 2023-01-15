@@ -16,6 +16,7 @@ ReactDOM.createRoot(document.querySelector("#root")).render(<TictaktocGame />);
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import TicTacToe from './gameComponent/tictaktocGame';
+// import TicTacToe from './gameComponent/tictaktocGame';
+import MineSerach from './gameComponent/mineSerach';
 
-ReactDOM.render(<TicTacToe />, document.querySelector('#root'));
+ReactDOM.createRoot(document.querySelector("#root")).render(<MineSerach />);
