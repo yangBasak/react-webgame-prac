@@ -27,7 +27,8 @@ module.exports = {
                     "@babel/preset-react"
                 ], //바벨env,react 연결
                 plugins: [
-                    'react-refresh/babel' // 바벨 작동 시 핫 리로딩 기능 실행
+                    'react-refresh/babel', // 바벨 작동 시 핫 리로딩 기능 실행
+                    '@babel/plugin-proposal-class-properties'
                 ]
             }
         }]
@@ -47,6 +48,7 @@ module.exports = {
         devMiddleware: {
             publicPath: '/dist/' //빌드 시 이 경로에 결과를 저장한다. 
         },
+        historyApiFallback: true,
         static: { directory: path.resolve(__dirname) }, //index.html 위치
         hot: true //webpack v4부터 hot은 자동으로 적용해서 굳이 안적어도 된댕
     }

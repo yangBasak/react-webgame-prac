@@ -11,12 +11,12 @@ const TictaktocGame = require("./gameComponent/tictaktocGame");
 ReactDOM.createRoot(document.querySelector("#root")).render(<TictaktocGame />);
 */
 
+import React from "react";
 
-
-import React from 'react';
-import ReactDOM from 'react-dom';
-
+// import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 // import TicTacToe from './gameComponent/tictaktocGame';
-import MineSerach from './gameComponent/mineSerach';
+// import MineSerach from './gameComponent/mineSerach';
+import Games from "./games";
 
-ReactDOM.createRoot(document.querySelector("#root")).render(<MineSerach />);
+ReactDOM.createRoot(document.querySelector("#root")).render(<Games />);
