@@ -1,11 +1,12 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 
 import MineSerach from "./gameComponent/mineSerach";
 import LottoGame from "./gameComponent/lottoGameHooks";
 
 function GameMatcher() {
   let params = useParams();
+  let location = useLocation();
 
   if (params.name === "mineSerach") {
     return <MineSerach />;

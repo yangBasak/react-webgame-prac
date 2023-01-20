@@ -1,5 +1,11 @@
 import React from "react";
-import { Link, BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  Link,
+  Switch,
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
 import GameMatcher from "./gameMatcher";
 import MineSerach from "./gameComponent/mineSerach";
 import LottoGame from "./gameComponent/lottoGameHooks";
@@ -13,9 +19,8 @@ const Games = () => {
         <Link to="/game/index">게임매처</Link>
       </div>
       <Routes>
-        {/* <Route path="/mineSerach" element={<MineSerach />}></Route>
-        <Route path="/lottoGame" element={<LottoGame />}></Route> */}
         <Route path="/game/:name" element={<GameMatcher />}></Route>
+        <Route path="/game/mineSerach" element={<GameMatcher />}></Route>
       </Routes>
     </Router>
   );
