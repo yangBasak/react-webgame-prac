@@ -270,6 +270,7 @@ const MineSerach = () => {
   }, [halted]);
   return (
     <TableContext.Provider value={value}>
+      <h2>지뢰찾기 게임</h2>
       <Form />
       <div>{timer}</div>
       <Table />

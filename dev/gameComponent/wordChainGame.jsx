@@ -25,6 +25,7 @@ const WordChainGame = function () {
 
   return (
     <>
+      <h2>끝말잇기 게임</h2>
       <div>{word}</div>
       <form onSubmit={onSubmitFrom}>
         <input ref={inputRef} value={value} onChange={onChangeInput} />
