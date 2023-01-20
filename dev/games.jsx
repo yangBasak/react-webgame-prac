@@ -1,14 +1,6 @@
 import React from "react";
-import {
-  Link,
-  Switch,
-  BrowserRouter as Router,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { Link, BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import GameMatcher from "./gameMatcher";
-import MineSerach from "./gameComponent/mineSerach";
-import LottoGame from "./gameComponent/lottoGameHooks";
 
 const Games = () => {
   return (
