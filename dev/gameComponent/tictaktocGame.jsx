@@ -1,7 +1,7 @@
 // const React = require("react");
 // const { useReducer } = React;
 // const Table = require("../component/table");
-import React, { useEffect, useReducer, useCallback } from "react";
+import React, { useEffect, useReducer } from "react";
 import Table from "../component/table";
 
 const initialState = {
@@ -69,32 +69,16 @@ const TictaktocGame = () => {
       return;
     }
     let win = false;
-    if (
-      tableData[row][0] === turn &&
-      tableData[row][1] === turn &&
-      tableData[row][2] === turn
-    ) {
+    if (tableData[row][0] === turn && tableData[row][1] === turn && tableData[row][2] === turn) {
       win = true;
     }
-    if (
-      tableData[0][cell] === turn &&
-      tableData[1][cell] === turn &&
-      tableData[2][cell] === turn
-    ) {
+    if (tableData[0][cell] === turn && tableData[1][cell] === turn && tableData[2][cell] === turn) {
       win = true;
     }
-    if (
-      tableData[0][0] === turn &&
-      tableData[1][1] === turn &&
-      tableData[2][2] === turn
-    ) {
+    if (tableData[0][0] === turn && tableData[1][1] === turn && tableData[2][2] === turn) {
       win = true;
     }
-    if (
-      tableData[0][2] === turn &&
-      tableData[1][1] === turn &&
-      tableData[2][0] === turn
-    ) {
+    if (tableData[0][2] === turn && tableData[1][1] === turn && tableData[2][0] === turn) {
       win = true;
     }
 
