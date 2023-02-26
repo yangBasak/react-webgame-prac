@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useLocation, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import MineSerach from "./gameComponent/mineSerach";
 import LottoGame from "./gameComponent/lottoGameHooks";
